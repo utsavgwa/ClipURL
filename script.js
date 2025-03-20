@@ -1,7 +1,7 @@
 // --- Configuration ---
 
 // TinyURL API endpoint for URL shortening
-const API_ENDPOINT = 'http://tinyurl.com/api-create.php/?url=';
+const API_ENDPOINT = 'https://tinyurl.com/api-create.php?url=';
 
 // Google Sheets Logging Endpoint (update with your Google Apps Script Web App URL)
 const LOGGING_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxrgK6MILrryEmfPmoAoHXlDjjzudb_TSdKrORh0ZnAtmXUQcxpkISoH4zncTGYgJ6o/exec';
