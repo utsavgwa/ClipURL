@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta property="og:title" content="ClipURL" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://" />
+  <meta property="og:description" content="Quickly shorten long URLs into crisp links. Now!;" />
+  <meta name="description" content="Quickly shorten long URLs into crisp links. Now!;" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClipURL</title>
+  <!-- Google Fonts -->
+  <link rel="icon" type="image/png" href="https://www.google.com/s2/favicons?domain=https://utsavgwa.github.io/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main>
+    <section class="container">
+      <h1>ClipURL</h1>
+      <p class="description">
+        <!-- Quickly shorten long URLs into crisp links while logging each transaction for precise tracking. Now! -->
+        Quickly shorten long URLs into crisp links. Now!
+      </p>
+      <div class="input-section">
+        <input type="text" id="urlInput" placeholder="Enter URL here" />
+        <button id="shortenBtn">Short Link</button>
+      </div>
+      <div class="output-section">
+        <input type="text" id="shortUrl" readonly placeholder="Your short URL will appear here" />
+        <button id="copyBtn">Copy Link</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast Notification Container -->
+  <div id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+/* Reset & Box Sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Body & Background */
+  body {
+    font-family: 'Lora', serif;
+    background-color: #F5F8FA; /* Light background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    font-size: 1rem; /* Base font size */
+    padding: 1rem; /* Prevent content from touching edges on very small screens */
+  }
+  
+  /* Container Styling */
+  .container {
+    background-color: #fff;
+    padding: 1.25rem;           /* 20px */
+    /* Crisp edges: no border-radius */
+    box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.1);
+    max-width: 31.25rem;        /* 500px */
+    width: 100%;
+  }
+  
+  /* Heading */
+  h1 {
+    font-family: 'PT Sans', sans-serif; /* Heading font */
+    text-align: center;
+    color: #375E97;             /* Deep blue */
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Description Under Heading */
+  .description {
+    font-family: 'Lora', serif;
+    font-size: 1.125rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  /* Input Section (URL + Short Link button) */
+  .input-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;              /* Space between input and button */
+    flex-wrap: wrap;        /* Wrap on small screens */
+    margin-bottom: 1.2rem;
+  }
+  
+  /* Make input and button share consistent styles */
+  .input-section input,
+  .input-section button {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    margin: 0;
+    /* Crisp edges: no border-radius */
+  }
+  
+  /* Input grows to fill space; button stays auto-width */
+  .input-section input {
+    flex: 1;  
+    transition: border-color 0.3s ease;
+  }
+  
+  .input-section input:focus {
+    outline: none;
+    border-color: #375E97;
+  }
+  
+  /* Button styles */
+  .input-section button {
+    background-color: #FB6542;  /* Orange-red */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;  /* Prevent text wrapping */
+    flex-shrink: 0;       /* Keep button at its natural width */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .input-section button:hover {
+    background-color: #e75439; /* Slightly darker */
+    transform: translateY(-0.125rem);
+  }
+  
+  .input-section button:active {
+    transform: translateY(0);
+  }
+  
+  .input-section button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  /* Output Section (Shortened link + Copy Link button) */
+  .output-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;              /* Space between short link input and copy button */
+    margin-bottom: 1.2rem;
+  }
+  
+  /* Shared styling for short URL input and copy button */
+  .output-section input,
+  .output-section button {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    margin: 0;
+    /* Crisp edges: no border-radius */
+  }
+  
+  /* Let the short URL input grow; keep button at natural width */
+  .output-section input {
+    flex: 1;  
+    transition: border-color 0.3s ease;
+  }
+  
+  .output-section input:focus {
+    outline: none;
+    border-color: #375E97;
+  }
+  
+  .output-section button {
+    background-color: #FB6542;  /* Orange-red */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;  /* Prevent text wrapping */
+    flex-shrink: 0;       /* Keep button at its natural width */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .output-section button:hover {
+    background-color: #e75439;
+    transform: translateY(-0.125rem);
+  }
+  
+  .output-section button:active {
+    transform: translateY(0);
+  }
+  
+  .output-section button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  /* Toast Notification */
+  #toast {
+    visibility: hidden;
+    min-width: 12.5rem;        /* 200px */
+    background-color: #FFBB00; /* Yellow-orange */
+    color: #fff;
+    text-align: center;
+    /* Crisp edges: no border-radius */
+    padding: 0.75rem 1rem;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 1.875rem;          /* 30px */
+    transform: translateX(-50%);
+    font-size: 1rem;
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.15);
+  }
+  
+  #toast.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  /* Toast Animations */
+  @keyframes fadein {
+    from {
+      bottom: 1.25rem; /* 20px */
+      opacity: 0;
+    }
+    to {
+      bottom: 1.875rem; /* 30px */
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeout {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  /* Responsive Design for Handheld Devices */
+  @media (max-width: 37.5rem) { /* 600px */
+    .container {
+      padding: 1.5rem;
+      margin: 0.5rem; /* Additional margin around the container */
+    }
+    
+    h1 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+    
+    .description {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    /* Inputs and buttons stack vertically on small screens */
+    .input-section,
+    .output-section {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    /* Increase padding for easier tapping, larger font */
+    .input-section input,
+    .input-section button,
+    .output-section input,
+    .output-section button {
+      padding: 1rem;
+      font-size: 1.1rem;
+    }
+  }
+  
